@@ -1,0 +1,11 @@
+general-tubes
+
+build/*.o
+output/*.xyz
+output/*.coord
+test
+debug
+final
+
+mybuild
+build
