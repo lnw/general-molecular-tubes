@@ -6,7 +6,6 @@
 #include <vector>
 
 #include "auxiliary.hh"
-// #include "geometry2.hh"
 #include "geometry3.hh"
 #include "tile.hh"
 #include "shape-gen.hh"
@@ -15,17 +14,16 @@
 using namespace std;
 
 
-
 int main(int ac, char **av) {
 
 //  cerr << ac << endl;
   if (ac != 5) {
     cout << "general-tube-gen" << endl;
-    cout << "usage: " << av[0] << " <n_db> <n_rings> <shape> <tile>" << endl;
-    cout << "  <n_db>: the number of double bonds" << endl;
-    cout << "  <n_rings>: ..." << endl;
-    cout << "  <shape>: ..." << endl;
-    cout << "  <tile>: ..." << endl;
+    cout << "usage: " << av[0] << " <n1> <n2> <shape> <tile>" << endl;
+    cout << "  <n1>: the number of tiles along one circumference of the tube" << endl;
+    cout << "  <n2>: the number of tiles along the length of the tube" << endl;
+    cout << "  <shape>: index of shape" << endl;
+    cout << "  <tile>: index of tile type" << endl;
     abort();
   }
   const int n_db = stol(av[1], 0, 0);
@@ -33,8 +31,8 @@ int main(int ac, char **av) {
   const int c = stol(av[3], 0, 0);
   const int t = stol(av[4], 0, 0);
 
-  cout << "number of double bonds: " << n_db << endl;
-  cout << "number of rings: " << n_rings << endl;
+  cout << "number of tiles per layer: " << n_db << endl;
+  cout << "number of layers: " << n_rings << endl;
   cout << "shape type: " << c << endl;
   cout << "tile type: " << t << endl;
 
@@ -137,9 +135,9 @@ int main(int ac, char **av) {
 
 // cout << S3 << endl;
 
-
-  ofstream xyz(("whatever-" + to_string(n_db) +"-"+ to_string(n_rings) + "-" + to_string(c) + "-" + to_string(t) + ".xyz").c_str());
-  ofstream turbo(("whatever-" + to_string(n_db) +"-"+ to_string(n_rings) + "-" + to_string(c) + "-" + to_string(t) + ".coord").c_str());
+  const string base("tube-");
+  ofstream xyz((base + to_string(n_db) +"-"+ to_string(n_rings) + "-" + to_string(c) + "-" + to_string(t) + ".xyz").c_str());
+  ofstream turbo((base + to_string(n_db) +"-"+ to_string(n_rings) + "-" + to_string(c) + "-" + to_string(t) + ".coord").c_str());
   xyz << S3.to_xyz();
   turbo << S3.to_turbomole();
   xyz.close();

@@ -11,14 +11,14 @@ as possible for a variety of usecases.  If it is useful to you, especially in a
 scientific context, you are encouraged to cite: ...
 
 
-Some parts of ```geometry{2,3}.{hh,cc}``` and ```auxiliary.hh``` have been borrowed from
+Some parts of ```geometry3.{hh,cc}``` and ```auxiliary.hh``` have been borrowed from
 http://ctcp.massey.ac.nz/index.php?group=&page=fullerenes .
 
 
 ## Compiling
 
-There are two ways to build these little programs.  Should work on any Linux
-and related systems as well as macOS.
+There are two ways to build this little program.  Should work on any Linux and
+related systems as well as macOS.
 
 ### using the ordinary Makefile
 
@@ -34,4 +34,25 @@ cd mybuild
 [CXX=clang++] cmake ..
 make
 ```
+## Usage
+
+There are four input parameters:
+
+### tile type
+
+Currently there are 9 tiles defined (1 through 9).  Edit tile-gen.hh to define
+your own tiles.
+
+### shape type
+
+Currently there are 5 shapes defined (1 through 5).  1: linear tube, 2: torus,
+3-5:  much less useful, a trefoil, a lemniscate, etc.
+
+### number of tiles per layer
+
+Too few tiles per layer lead to high distortions.
+
+### number of layers
+
+If choosing a shape other than 1, too few layers lead to high distortions.
 

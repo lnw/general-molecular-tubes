@@ -3,7 +3,6 @@
 #include <limits>
 #include <cmath>
 
-// #include "geometry2.hh"
 #include "geometry3.hh"
 
 
@@ -377,7 +376,7 @@ structure3d structure3d::stripped_backbone() const {
 structure3d structure3d::get_selection(const vector<int>& selection) const {
   const structure3d& full = *this;
   structure3d s;
-  for(int i: selection){
+  for(size_t i: selection){
     if(i >= full.size()){
       cerr << "invalid index, bailing out ..." << endl;
       abort();
