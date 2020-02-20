@@ -31,7 +31,7 @@ make
 ```
 mkdir mybuild
 cd mybuild
-[CXX=clang++] cmake ..
+[CXX=clang++] cmake .. -DCMAKE_BUILD_TYPE=(release|debug)
 make
 ```
 ## Usage
