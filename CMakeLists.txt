@@ -16,15 +16,8 @@ set(CMAKE_CXX_FLAGS "")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
 set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -Wall -Wshadow -Wpedantic")
 
-set(PROGRAMS1
-  general-tubes
-)
-
 add_library(geom geometry3.cc tile.cc auxiliary.cc)
 
-foreach(program ${PROGRAMS1})
-  set(program_source ${program}.cc)
-  add_executable(${program} ${program_source})
-  target_link_libraries(${program} geom)
-endforeach(program ${PROGRAMS})
+add_executable(general-tubes general-tubes.cc)
+target_link_libraries(general-tubes geom)
 

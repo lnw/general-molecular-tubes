@@ -8,8 +8,12 @@ tiles of your own choice by adding an entry to `tile-gen.hh`.
 
 This software is published under a very permissive license to make it as useful
 as possible for a variety of usecases.  If it is useful to you, especially in
-an academic context, you are encouraged to cite: [to be added later]
+an academic context, you are encouraged to cite:
 
+A method for designing a novel class of gold-containing molecules,
+Christian A. Celaya, Mesías Orozco-Ic, Maria Dimitrova, Lukas N. Wirz, and Dage Sundholm,
+Chemical Communications,
+DOI: 10.1039/D0CC01227K
 
 Some parts of `geometry3.{hh,cc}` and `auxiliary.hh` have been borrowed from
 http://ctcp.massey.ac.nz/index.php?group=&page=fullerenes .
